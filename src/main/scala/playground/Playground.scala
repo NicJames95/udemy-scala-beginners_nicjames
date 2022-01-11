@@ -22,6 +22,7 @@ object Playground
     var r: Double = radius
     var c: Double = 0
     var n: String = name
+    var a: Double = 0
 
     def calcCircumference(): Unit ={
       c = Pi * d
@@ -30,7 +31,15 @@ object Playground
     }
 
     def calcDiameter(): Unit ={
+      d = 2 * r
+      n = name
+      println(s"The diameter of the $n is: $d")
+    }
 
+    def calcArea(): Unit = {
+      a = Pi * r * r
+      n = name
+      println(s"The area of the $n is: $a")
     }
 
   }
@@ -43,10 +52,13 @@ object Playground
     val volvo = new Car(40, 18)
     volvo.milesPerTank()
 
-    val baseball = new Ball(10,7, "Baseball")
-    val basketball = new Ball(48,23,"Basketball")
+    val baseball = new Ball(10,5, "Baseball")
+    val basketball = new Ball(48,24,"Basketball")
     baseball.calcCircumference()
     basketball.calcCircumference()
+    baseball.calcArea()
+    basketball.calcArea()
+
 
     println("I'm ready to learn Scala!")
 

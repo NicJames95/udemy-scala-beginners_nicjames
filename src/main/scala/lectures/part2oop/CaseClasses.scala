@@ -36,7 +36,7 @@ object CaseClasses extends App{
   // Akka
 
   // 7. CCs have extractor patterns = CCs can be used in PATTERN MATCHING
-
+  
   case object UnitedKingdom {
     def name: String = "The UK of GB and NI"
   }

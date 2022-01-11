@@ -6,7 +6,6 @@ object AnonymousClasses extends App{
     def eat: Unit
   }
 
-
   // anonymous class
   val funnyAnimal: Animal = new Animal {
     override def eat: Unit = println("ahahahahahah")
@@ -32,8 +31,8 @@ object AnonymousClasses extends App{
   // anonymous classes work for abstract and non-abstract classes
 
   /*
-    1. Generic trait MyPredicate[T] with a little method test(T) => Boolean
-    2. Generic trait MyTransformer[A, B] with a method transform(A) => B
+    1. Generic trait MyPredicate[-T] with a little method test(T) => Boolean
+    2. Generic trait MyTransformer[-A, B] with a method transform(A) => B
     3. MyList:
       - map(transformer) => MyList
       - filter(predicate) => MyList

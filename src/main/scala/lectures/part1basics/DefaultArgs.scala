@@ -7,13 +7,13 @@ object DefaultArgs extends App {
     else trFact(n - 1, n * acc)
   }
 
-    val fact10 = trFact(10, 2)
+  val fact10 = trFact(10, 2)
 
-    def savePicture(format: String = "jpg", width: Int = 1920, height: Int = 1080): Unit = {
-      println("saving picture")
-    }
+  def savePicture(format: String = "jpg", width: Int = 1920, height: Int = 1080): Unit = {
+    println("saving picture")
+  }
 
-  savePicture(width = 800)
+  savePicture(width = 2400)
 
   /*
     1. pass in every leading argument

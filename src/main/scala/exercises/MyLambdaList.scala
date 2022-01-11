@@ -122,16 +122,16 @@ object LambdaTest extends App {
   println(listOfIntegers.map(_ * 2).toString) // same ^^ as above
 
 
-//  println(listOfIntegers.filter(new Function1[Int, Boolean]{
-//    override def apply(elem: Int): Boolean = elem % 2 == 0
-//  }).toString)
+  //  println(listOfIntegers.filter(new Function1[Int, Boolean]{
+  //    override def apply(elem: Int): Boolean = elem % 2 == 0
+  //  }).toString)
   println(listOfIntegers.filter(elem => elem % 2 == 0).toString)
   println(listOfIntegers.filter(_ % 2 == 0).toString) // same as ^^ above
 
   println((listOfIntegers ++ anotherListOfIntegers).toString)
-//  println(listOfIntegers.flatMap(new Function1[Int, MyLambdaList[Int]] {
-//    override def apply(elem: Int): MyLambdaList[Int] = new LambdaCons(elem, new LambdaCons(elem + 1, LambdaEmpty))
-//  }).toString)
+  //  println(listOfIntegers.flatMap(new Function1[Int, MyLambdaList[Int]] {
+  //    override def apply(elem: Int): MyLambdaList[Int] = new LambdaCons(elem, new LambdaCons(elem + 1, LambdaEmpty))
+  //  }).toString)
   println(listOfIntegers.flatMap(elem => new LambdaCons(elem, new LambdaCons(elem + 1, LambdaEmpty))).toString)
   // ^^ cannot use shortcut due to elem being used multiple times
 

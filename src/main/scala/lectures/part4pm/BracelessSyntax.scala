@@ -80,7 +80,7 @@ object BracelessSyntax {
     def grow(): Unit =
       println("I'm growing")
 
-    // 3000 more linds of code
+    // 3000 more lines of code
   end Animal  // for if, match, for, methods, classes, traits, enums, objects
 
   // anonymous classes

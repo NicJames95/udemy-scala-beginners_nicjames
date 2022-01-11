@@ -22,6 +22,7 @@ object OOBasics extends App{
   counter.inc(10).print
 }
 // constructor
+// class parameters are NOT FIELDS
 class Person(name: String, val age: Int) {
   // body
   // val or var definitions & are fields
@@ -41,8 +42,6 @@ class Person(name: String, val age: Int) {
   def this(name: String) = this(name, 0)
   def this() = this("John Doe")
 }
-
-// class parameters are NOT FIELDS
 
 /* Novel and a Writer
 

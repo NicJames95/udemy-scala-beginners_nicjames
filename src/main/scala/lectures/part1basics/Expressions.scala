@@ -33,36 +33,32 @@ object Expressions extends App
       i += 1
   }
 
-    // NEVER WRITE THIS AGAIN
+  // NEVER WRITE THIS AGAIN
 
-    // EVERYTHING in Scala is an Expression!
+  // EVERYTHING in Scala is an Expression!
 
-    val aWeirdValue = (aVariable = 3) // Unit === void
-    println(aWeirdValue)
+  val aWeirdValue = (aVariable = 3) // Unit === void
+  println(aWeirdValue)
 
-    // side effects: println(), whiles, reassigning
+  // side effects: println(), whiles, reassigning
 
-    // Code blocks
+  // Code blocks
 
-    val aCodeBlock =
-    {
-      val y = 2
-      val z = y + 1
+  val aCodeBlock =
+  {
+    val y = 2
+    val z = y + 1
 
-      if (z > 2) "hello" else "goodbye"
-    }
+    if (z > 2) "hello" else "goodbye"
+  }
 
-    // 1. difference between "hello world"= string  vs println("hello world")?= Unit(side effect)
-    // 2.
+  // 1. difference between "hello world"= string  vs println("hello world")?= Unit(side effect)
+  // 2.
 
-    val someValue =
-    {
-      2 < 3
-    }
+  val someValue =
+  {
+    2 < 3
+  }
 
-      // someValue = boolean
-
-
-
-
+  // someValue = boolean
 }

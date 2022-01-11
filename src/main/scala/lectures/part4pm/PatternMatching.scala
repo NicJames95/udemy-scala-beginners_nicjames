@@ -42,7 +42,7 @@ object PatternMatching extends App {
   case class Parrot(greeting: String) extends Animal
 
   val animal: Animal = Dog("Terra Nova")
-  animal match {
+    animal match {
     case Dog(someBreed) => println(s"Matched a dog of the $someBreed breed")
   }
 

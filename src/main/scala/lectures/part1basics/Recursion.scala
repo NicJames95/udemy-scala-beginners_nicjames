@@ -42,7 +42,7 @@ object Recursion extends App {
 
   println(anotherFactorial(5000))
 
-  // WHEN YOU NEED LOOPS, USE_TAIL_RECURSION.
+  // WHEN YOU NEED LOOPS, USE _TAIL_ RECURSION.
   /*
   1. Concatenate a string n times
   2. isPrime function tail recursive
@@ -56,27 +56,28 @@ object Recursion extends App {
   println(concatenateTailrec("hello", 3, ""))
 
 
-//  def isPrime(n: Int): Boolean = {
-//    @tailrec
-//    def isPrimeTailrec(t: Int, isStillPrime: Boolean): Boolean =
-//      if (!isStillPrime) false
-//      else if (t <= 1) true
-//      else isPrimeTailrec(t - 1, n % t != 0 && isStillPrime)
-//
-//      isPrimeTailrec(n / 2,true)
-//  }
-//
-//  println(isPrime(2003))
-//  println(isPrime(629))
-//
-//def fibonacci (n: Int): Int = {
-//  def fiboTailrec(i: Int, last: Int, nextToLast: Int): Int =
-//    if ( i >= n) last
-//    else fiboTailrec(i + 1, last + nextToLast, last)
-//
-//    if (n <= 2) 1
-//    else fiboTailrec(2, 1, 1)
-//}
+  def isPrime(n: Int): Boolean = {
+    @tailrec
+    def isPrimeTailrec(t: Int, isStillPrime: Boolean): Boolean =
+      if (!isStillPrime) false
+      else if (t <= 1) true
+      else isPrimeTailrec(t - 1, n % t != 0 && isStillPrime)
 
-//println(fibonacci(8))
+    isPrimeTailrec(n / 2,true)
+  }
+
+  println(isPrime(2003))
+  println(isPrime(629))
+
+  def fibonacci (n: Int): Int = {
+    @tailrec
+    def fiboTailrec(i: Int, last: Int, nextToLast: Int): Int =
+      if ( i >= n) last
+      else fiboTailrec(i + 1, last + nextToLast, last)
+
+    if (n <= 2) 1
+    else fiboTailrec(2, 1, 1)
+  }
+
+  println(fibonacci(8))
 }

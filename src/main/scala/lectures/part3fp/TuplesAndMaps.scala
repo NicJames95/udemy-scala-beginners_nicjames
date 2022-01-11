@@ -3,7 +3,7 @@ package lectures.part3fp
 object TuplesAndMaps extends App {
 
   // tuples = finite ordered "lists"
-  //val aTuple = new Tuple2(2, "hello, Scala") // Tuple2[Int, String] = (Int, String)
+  // val aTuple = new Tuple2(2, "hello, Scala") // Tuple2[Int, String] = (Int, String)
   // or
   /* Tuples
   val tuple = (42, "RockTheJVM")
@@ -86,7 +86,7 @@ object TuplesAndMaps extends App {
 
 //    network + (a -> (friendsA :+ b)) + (b -> (friendsB :+ a)) how to add to the lists now its a set
 // using set also guarantees that each person set is unique
-  network + (a -> (friendsA + b)) + (b -> (friendsB + a))
+    network + (a -> (friendsA + b)) + (b -> (friendsB + a))
   }
 
   def unfriend(network: Map[String, Set[String]], a: String, b: String): Map[String, Set[String]] = {

@@ -1,11 +1,13 @@
 package lectures.part1basics
 
 object Functions extends App {
-  def aFunction(a: String, b: Int): Unit =
+
+  def aFunction(a: String, b: Int): String =
     a + " " + b
   println(aFunction("hello", 3))
+
   def aParameterlessFunction(): Int = 42
-    println(aParameterlessFunction())
+  println(aParameterlessFunction())
 
   def aRepeatedFunction(aString: String, n: Int): String = {
     if (n == 1) aString
@@ -46,7 +48,6 @@ object Functions extends App {
   }
 
   def factorial(n: Int): Int = {
-
     if (n <= 0) 1
     else n * factorial(n - 1)
   }
@@ -71,10 +72,6 @@ object Functions extends App {
   }
 
   println(isPrime(37))
-
+  println(isPrime(27 * 17))
   println(isPrime(2003))
-
-
-
-
 }

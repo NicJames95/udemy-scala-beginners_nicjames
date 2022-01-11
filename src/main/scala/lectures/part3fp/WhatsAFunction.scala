@@ -41,7 +41,7 @@ object WhatsAFunction extends App{
 
   // Function1[Int, Function1[Int, Int]]
   val superAdder: Function1[Int, Function1[Int, Int]] = new Function1[Int, Function1[Int, Int]] {
-    override def apply(x: Int): Function[Int, Int] = new Function1[Int, Int] {
+    override def apply(x: Int): Function1[Int, Int] = new Function1[Int, Int] {
       override def apply(y: Int): Int = x + y
   }
   }

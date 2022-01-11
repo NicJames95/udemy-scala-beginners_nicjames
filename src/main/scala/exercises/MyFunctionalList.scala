@@ -8,6 +8,8 @@ abstract class MyFunctionalList[+A] {
     isEmpty = is this list empty
     add(int) => new list with this element added
     toString => a string representation of the list
+  
+    2. transform the MyPredicate and MyTransformer into function types
   */
 
   def head: A

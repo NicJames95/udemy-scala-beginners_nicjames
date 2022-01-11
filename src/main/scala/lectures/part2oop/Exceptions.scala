@@ -10,7 +10,7 @@ object Exceptions extends App {
 
   // 1. throwing exceptions
 
-  //val aWeirdValue: String = throw new NullPointerException
+  // val aWeirdValue: String = throw new NullPointerException
 
   // throwable classes extend the Throwable class.
   // Exception and Error are the major Throwable subtypes
@@ -20,21 +20,21 @@ object Exceptions extends App {
     if (withExceptions) throw new RuntimeException("No int for you!")
     else 42
 
-    val potentialFail = try {
-      // code that might throw
-      getInt(false)
-    } catch {
-      case e: RuntimeException => 43
-    } finally {
-      // code that will get executed NO MATTER WHAT
-      // optional
-      // does not influence the return type of this expression
-      // use finally only for side effects
-      println("finally")
-    }
-    // runs as caught a Runtime exception
-    // finally
-    println(potentialFail)
+  val potentialFail = try {
+    // code that might throw
+    getInt(false)
+  } catch {
+    case e: RuntimeException => 43
+  } finally {
+    // code that will get executed NO MATTER WHAT
+    // optional
+    // does not influence the return type of this expression
+    // use finally only for side effects
+    println("finally")
+  }
+  // runs as caught a Runtime exception
+  // finally
+  println(potentialFail)
 
   // 3. how to define your own exceptions
   class MyException extends Exception
@@ -46,15 +46,15 @@ object Exceptions extends App {
     1. Crash your program with an OutOfMemoryError
     2. Crash with SOError
     3. PocketCalculator
-      - add(x,y)
-      - subtract(x,y)
-      - multiply(x,y)
-      - divide(x,y)
+       - add(x,y)
+       - subtract(x,y)
+       - multiply(x,y)
+       - divide(x,y)
 
-      Throw
-        - OverflowException if add(x,y) exceeds Int.MAX_VALUE
-        - UnderflowException if subtract(x,y) exceeds Int.MIN_VALUE
-        - MathCalculationException for division by 0
+       Throw
+         - OverflowException if add(x,y) exceeds Int.MAX_VALUE
+         - UnderflowException if subtract(x,y) exceeds Int.MIN_VALUE
+         - MathCalculationException for division by 0
   */
 
   //val array = Array.ofDim(Int.MaxValue) // OutOfMemoryError(OOM)

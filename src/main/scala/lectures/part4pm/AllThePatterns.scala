@@ -1,6 +1,6 @@
 package lectures.part4pm
 
-import exercises.{ForCons, ForEmpty, MyForList}
+import exercises.{Cons, Empty, MyList}
 
 object AllThePatterns extends App {
 
@@ -40,10 +40,10 @@ object AllThePatterns extends App {
 
   // 4. case classes - constructor pattern
   // PMs can be nested with CCs as well
-  val aList: MyForList[Int] = ForCons(1, ForCons(2, ForEmpty))
+  val aList: MyList[Int] = Cons(1, Cons(2, Empty))
   val matchAList = aList match {
-    case ForEmpty =>
-    case ForCons(head, ForCons(subhead, subtail)) =>
+    case Empty =>
+    case Cons(head, Cons(subhead, subtail)) =>
   }
 
   // 5. list patterns
@@ -64,8 +64,8 @@ object AllThePatterns extends App {
 
   // 7. name binding
   val nameBindingMatch = aList match {
-    case nonEmptyList @ ForCons(_, _) => // name binding => use the name later(here)
-    case ForCons(1, rest @ ForCons(2, _)) => // name binding inside nested patterns
+    case nonEmptyList @ Cons(_, _) => // name binding => use the name later(here)
+    case Cons(1, rest @ Cons(2, _)) => // name binding inside nested patterns
   }
 
   // 8. multi-patterns
@@ -75,7 +75,7 @@ object AllThePatterns extends App {
 
   // 9. if guards
   val secondElementSpecial = aList match {
-    case ForCons(_ , ForCons(specialElement, _)) if specialElement % 2 == 0 =>
+    case Cons(_ , Cons(specialElement, _)) if specialElement % 2 == 0 =>
   }
 
   // ALL
@@ -93,5 +93,6 @@ object AllThePatterns extends App {
 
   println(numbersMatch)
   // JVM trick question returns "a list of strings"
+  // JVM doesn't recognize the type just that it is a list
 
 }

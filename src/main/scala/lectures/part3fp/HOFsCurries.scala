@@ -88,6 +88,10 @@ object HOFsCurries extends App{
   def add4 = superAdder2(4)
   println(add4(17))
 
+  def curry(x: Int)(y: Int): Unit = {
+    println(x + y)
+  }
+
   // fromCurry
   val simpleAdder = fromCurry(superAdder)
   println(simpleAdder(4, 17))

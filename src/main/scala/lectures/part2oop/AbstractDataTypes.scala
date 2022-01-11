@@ -6,7 +6,6 @@ object AbstractDataTypes extends App{
   abstract class Animal {
     val creatureType: String = "wild"
     def eat: Unit
-
   }
 
   class Dog extends Animal {
@@ -21,18 +20,18 @@ object AbstractDataTypes extends App{
   }
 
   trait ColdBlooded
-  class Crocodile extends Animal with Carnivore with ColdBlooded{
+  class Crocodile extends Animal with Carnivore with ColdBlooded {
     override val creatureType: String = "croc"
-    def eat: Unit = "nomnomnom"
+    def eat: Unit = println("nomnomnom")
     def eat(animal: Animal): Unit = println(s"I'm a croc and I'm eating ${animal.creatureType}")
   }
 
   val dog = new Dog
   val croc = new Crocodile
- println(croc.eat(dog))
+  println(croc.eat(dog))
 
  // traits vs abstract classes
- // 1 - traits do not have constructor parameters
+ // 1 - traits do not have constructor parameters (possible in Scala 3)
  // 2 - multiple traits may be inherited by the same class
  // 3 - traits = behavior, abstract class = "thing"
 }

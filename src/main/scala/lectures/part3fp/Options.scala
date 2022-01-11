@@ -29,34 +29,34 @@ object Options extends App {
 
   // unsafe APIs
   def unsafeMethod(): String = null
- // val result = Some(unsafeMethod()) ; might get = Some(null) // WRONG
+  // val result = Some(unsafeMethod()) ; might get = Some(null) // WRONG
   val result = Option(unsafeMethod()) // Some or None
   println(result)
 
- // chained methods
+  // chained methods
   def backupMethod(): String = "A valid result"
   val chainedResult = Option(unsafeMethod()).orElse(Option(backupMethod()))
 
- // DESIGN unsafe APIs
+  // DESIGN unsafe APIs
   def betterUnsafeMethod(): Option[String] = None
   def betterBackupMethod(): Option[String] = Some("A valid result")
 
   val betterChainedResult = betterUnsafeMethod() orElse betterBackupMethod()
 
- // functions on Options
+  // functions on Options
   println(myFirstOption.isEmpty)
   println(myFirstOption.get) // UNSAFE - DO NOT USE THIS
 
- // map, flatMap, filter
+  // map, flatMap, filter
   println(myFirstOption.map(_ * 2))    // Some(8)
   println(myFirstOption.filter(x => x > 10))   // 4 is not greater than 10 = None
   println(myFirstOption.flatMap(x => Option(x * 10)))  // Some(40)
 
- // for-comprehensions
+  // for-comprehensions
 
- /*
- Exercise
- */
+  /*
+  Exercise
+  */
   val config: Map[String, String] = Map(
    // fetched from elsewhere
    "host" -> "176.45.36.1",
@@ -73,43 +73,43 @@ object Options extends App {
      else None
  }
 
- // try to establish a connection, if so - print the connect method
+  // try to establish a connection, if so - print the connect method
   val host = config.get("host")
   val port = config.get("port")
- /* Connection logic
+  /* Connection logic
   if (h != null)
     if (p != null)
       return Connection.apply(h,p)
 
   return null
- */
+  */
   val connection = host.flatMap(h => port.flatMap(p => Connection.apply(h, p)))
- /* Connection Status logic
+  /* Connection Status logic
   if (c != null)
     return c.connect
   return null
- */
+  */
   val connectionStatus = connection.map(c => c.connect) // if connection is there then the connection status will
- // contain the "connectivity" of connection
+  // contain the "connectivity" of connection
 
- /* println logic
+  /* println logic
   if (connectionStatus == null) println(None) else print (Some(connectionstatus.get))
- */
+  */
   println(connectionStatus)    // if no connection prints None and will not print line below
- /* connectionStatus foreach logic
+  /* connectionStatus foreach logic
   if (status != null)
     println(status)
- */
+  */
   connectionStatus.foreach(println)
 
- // Alternative solution // chained calls
+  // Alternative solution // chained calls
   config.get("host")
    .flatMap(host => config.get("port")
       .flatMap(port => Connection(host, port))
       .map(connection => connection.connect))
    .foreach(println)
 
- // for-comprehension
+  // for-comprehension
   val forConnectionStatus = for {
    host <- config.get("host")
    port <- config.get("port")

@@ -2,7 +2,7 @@ package lectures.part1basics
 
 object StringOps extends App{
 
-  val str: String = "Hello, I am learning Scala"
+  val str: String = "Never Odd Or Even"
 
   println(str.charAt(2))
   println(str.substring(7, 11))

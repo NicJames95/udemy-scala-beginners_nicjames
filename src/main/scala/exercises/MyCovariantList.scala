@@ -8,8 +8,10 @@ abstract class MyCovariantList[+A] {
     isEmpty = is this list empty
     add(int) => new list with this element added
     toString => a string representation of the list
-  
-3. MyList:
+
+    1. Generic trait MyPredicate[-T] with a little method test(T) => Boolean
+    2. Generic trait MyTransformer[-A, B] with a method transform(A) => B
+    3. MyList:
       - map(transformer) => MyList
       - filter(predicate) => MyList
       - flatMap(transformer from A to MyList[B]) => MyList[B]

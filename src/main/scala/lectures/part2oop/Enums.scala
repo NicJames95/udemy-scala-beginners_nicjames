@@ -23,7 +23,7 @@ object Enums {
 
   object PermissionsWithBits {
     def fromBits(bits: Int): PermissionsWithBits = // whatever
-    PermissionsWithBits.NONE
+      PermissionsWithBits.NONE
   }
 
   // standard API
